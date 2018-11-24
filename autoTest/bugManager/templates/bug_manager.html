@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <title>Bug管理</title>
+</head>
+<body>
+<div class="row" style="padding-top:70px;">
+    <div class="col-md-11">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th><th>产品</th><th>bug名称</th><th>bug详情</th><th>bug状态</th><th>bug等级</th><th>bug创建者</th><th>bug分配给</th><th>创建者</th><th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for bug in bugs %}
+                <td>{{ bug.id }}</td>
+                <td>{{ bug.Product }}</td>
+                <td>{{ bug.bugName }}</td>
+                <td>{{ bug.bugDetail }}</td>
+                <td>{{ bug.bugStatus }}</td>
+                <td>{{ bug.bugLevel }}</td>
+                <td>{{ bug.bugCreate }}</td>
+                <td>{{ bug.bugAssign }}</td>
+                <td>{{ bug.bugCreateTime }}</td>
+                <td><a class="related-widget-wrapper-link add-related" id="add_id_BugManager" href="../admin/bugManager/bugmanager/{{ bug.id  }}/change/?_to_field=id&_popup=1"><img src="/static/admin/img/icon-changelink.svg"/></a></td>
+<td><a class="related-widget-wrapper-link add-related" id="add_id_BugManager" href="../admin/bugManager/bugmanager/{{ bug.id  }}/delete/?_to_field=id&_popup=1"><img src="/static/admin/img/icon-deletelink.svg"/></a></td>
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <title>设置用户</title>
+</head>
+<body>
+<table class="table table-striped" style="table-layout:fixed;">
+    <style>
+        td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>用户名</th>
+{#        <th>密码</th>#}
+        <th>邮箱</th>
+        <th>最近登录日期</th>
+        <th>注册日期</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+        <tr>
+            <th>{{ user.id }}</th>
+            <th>{{ user.username }}</th>
+{#            <th>{{ user.password }}</th>#}
+            <th>{{ user.email }}</th>
+            <th>{{ user.last_login }}</th>
+            <th>{{ user.date_joined }}</th>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

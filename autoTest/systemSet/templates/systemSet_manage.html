@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta charset="UTF-8">
+    <title>系统设置</title>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-11" style="padding-top:70px;">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th><th>环境名称</th><th>url</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for systemSet in systemSets %}
+                <tr>
+                <td>{{ systemSet.id }}</td>
+                <td>{{ systemSet.urlName }}</td>
+                <td>{{ systemSet.systemUrl }}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>
