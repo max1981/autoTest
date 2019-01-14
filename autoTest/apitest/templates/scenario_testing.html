@@ -16,11 +16,11 @@
         }
     </style>
     <meta charset="UTF-8">
-    <title>产品单一接口测试</title>
+    <title>场景接口测试</title>
 </head>
 <body>
 <div style="float:right;width:15%">
-    <a style='color:blue' class="related-widget-wrapper-link add-related" id="add_id_Apis" href="/admin/apitest/apis/add/?_to_field=id&amp;_popup=1" title="增加另一个接口测试">
+    <a style='color:blue' class="related-widget-wrapper-link add-related" id="add_id_Apis" href="/admin/apitest/apitest/add" title="增加另一个场景接口测试">
         <img src="/static/admin/img/icon-addlink.svg" alt="增加"/>增加
     </a>
 
@@ -52,35 +52,29 @@
             <thead>
             <tr>
                 <th>ID</th>
-                <th>产品</th>
-                <th>单一接口测试用例名称</th>
-                <th>URL地址</th>
-                <th>参数=值</th>
-                <th>方法</th>
-                <th>预计结果</th>
+                <th>场景接口测试名称</th>
+                <th>描述</th>
+                <th>测试者</th>
                 <th>测试结果</th>
                 <th>创建时间</th>
+                <th>产品ID</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
-            {% for api in apis %}
+            {% for scenario in scenarios %}
                 <tr>
-                    <td>{{ api.id }}</td>
-                    <td>{{ api.product }}</td>
-                    <td>{{ api.apiName }}</td>
-                    <td>{{ api.apiUrl }}</td>
-                    <td>{{ api.apiParamValue }}</td>
-                    <td>{{ api.apiMethod }}</td>
-                    <td>{{ api.apiResult }}</td>
-                    <td>{{ api.apiStatus }}</td>
-                    <td>{{ api.create_time }}</td>
-                    <td><a class="related-widget-wrapper-link add-related" id="change_id_Apis" href="../admin/apitest/apis/{{ api.id }}/change/?_to_field=id&_popup=1"><img
+                    <td>{{ scenario.id }}</td>
+                    <td>{{ scenario.apiTestName }}</td>
+                    <td>{{ scenario.apiTestDesc }}</td>
+                    <td>{{ scenario.apiTester }}</td>
+                    <td>{{ scenario.apiTestResult }}</td>
+                    <td>{{ scenario.create_time }}</td>
+                    <td>{{ scenario.Product_id }}</td>
+                    <td><a class="related-widget-wrapper-link add-related" id="add_id_Apis" href="../admin/apitest/apitest/{{ scenario.id }}/change/?_to_field=id&_popup=1"><img
                             src="/static/admin/img/icon-changelink.svg"/></a>
-                        <a class="related-widget-wrapper-link add-related" id="del_id_Apis" href="../admin/apitest/apis/{{ api.id }}/delete/?_to_field=id&_popup=1"><img
+                        <a class="related-widget-wrapper-link add-related" id="add_id_Apis" href="../admin/apitest/apitest/{{ scenario.id }}/delete/?_to_field=id&_popup=1"><img
                                 src="/static/admin/img/icon-deletelink.svg"/></a>
-                        <a class="related-widget-wrapper-link add-related" id="run_id_Apis" href="/api_run/{{ api.id }}"><img
-                                src="/static/admin/img/icon-alert.svg"/></a></td>
                     </td>
 
                 </tr>

@@ -32,5 +32,6 @@ urlpatterns = [
     url(r'^user/',sytemSet_views.set_user,name='set_user'),
     url(r'^left/',apitest_views.left,name='left'),
     url(r'^apisearch/',apitest_views.apisearch,name='apisearch'),
-    url(r'^myTest/',apitest_views.myTest,name='myTest'),
+    url(r'^scenario_testing/',apitest_views.scenario_testing,name='scenario_testing'),
+    url(r'^api_run/(\d+)/$',apitest_views.api_run,name='api_run'),
 ]
