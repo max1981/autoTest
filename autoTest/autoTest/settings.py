@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'bugManager',
     'systemSet',
+    'jmeter',
 ]
 
 MIDDLEWARE = [

@@ -19,6 +19,7 @@ from apitest import views as apitest_views
 from product import views as product_views
 from bugManager import views as bug_views
 from systemSet import views as sytemSet_views
+from jmeter import views as jmeter_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -34,4 +35,7 @@ urlpatterns = [
     url(r'^apisearch/',apitest_views.apisearch,name='apisearch'),
     url(r'^scenario_testing/',apitest_views.scenario_testing,name='scenario_testing'),
     url(r'^api_run/(\d+)/$',apitest_views.api_run,name='api_run'),
+    url(r'^jmeter/$',jmeter_views.showAllJxm,name='jmeter_list'),
+    url(r'^showResult/$',jmeter_views.showResult,name='showResult'),
+
 ]

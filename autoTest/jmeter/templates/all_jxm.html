@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style type="text/css">
+        table th td {
+            border: 1px;
+            solid-color: black;
+            overflow-y: scroll;
+        }
+
+        th {
+
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>性能测试</title>
+</head>
+<body>
+
+<div style="float:right;width:15%">
+    <a style='color:blue' class="related-widget-wrapper-link add-related" id="add_id_Apis" href="/admin/jmeter/jmeter/add" title="增加性能测试脚本">
+        <img src="/static/admin/img/icon-addlink.svg" alt="增加"/>增加
+    </a>
+
+</div>
+
+{#搜索栏#}
+<div class="page-header" style="padding-top:70px;padding-left: 20px;">
+    <form class="navbar-form" method="get" action="/apisearch/">
+        {% csrf_token %}
+        <input type="search" name="apitestname" placeholder="名称" required>
+        <button type="submit">搜索</button>
+    </form>
+</div>
+<div id="navbar" class="collapse navbar-collapse">
+    <ul class="'nav navbar-nav navbar-right">
+        <li><a href="#">{{ user }}</a></li>
+        <li><a href="/logout/">退出</a></li>
+
+    </ul>
+</div>
+
+<div class="row table-responsive" style="padding-top: 150px;padding-right: 30px;padding-left:20px;">
+    <div class="col-md-11 " style="overflow-y: auto;">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>性能测试名称</th>
+                <th>脚本路径</th>
+                <th>描述</th>
+                <th>测试结果</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for jmx in jxms %}
+                <tr>
+                    <td>{{ jmx.id }}</td>
+                    <td>{{ jmx.jxmName }}</td>
+                    <td>{{ jmx.jxmPath }}</td>
+                    <td>{{ jmx.description }}</td>
+                    <td><a class="jmx_result" href="http://127.0.0.1:8080/{{ jmx.result }}/">{{ jmx.result }}</a></td>
+                    <td>{{ jmx.create_time }}</td>
+                    <td>{{ jmx.Product_id }}</td>
+{#                    <td><a class="related-widget-wrapper-link add-related" id="add_id_Apis" href="../admin/apitest/apitest/{{ scenario.id }}/change/?_to_field=id&_popup=1"><img#}
+{#                            src="/static/admin/img/icon-changelink.svg"/></a>#}
+{#                        <a class="related-widget-wrapper-link add-related" id="add_id_Apis" href="../admin/apitest/apitest/{{ scenario.id }}/delete/?_to_field=id&_popup=1"><img#}
+{#                                src="/static/admin/img/icon-deletelink.svg"/></a>#}
+{#                    </td>#}
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
