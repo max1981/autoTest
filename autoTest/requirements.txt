@@ -58,7 +58,7 @@ gevent==1.2.2
 greenlet==0.4.13
 guppy==0.1.10
 html5lib==1.0.1
-httplib2==0.11.3
+httplib2==0.18.0
 humanize==0.5.1
 hyperlink==18.0.0
 idna==2.6
