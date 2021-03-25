@@ -152,7 +152,7 @@ python-slugify==1.2.5
 pytz==2018.4
 pywin32==216
 pywinpty==0.5.1
-pyyaml==3.12
+pyyaml==5.4
 pyzmq==17.0.0
 qtconsole==4.3.1
 query-string==1.0.1
