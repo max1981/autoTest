@@ -135,7 +135,7 @@ PyDispatcher==2.0.5
 pyexcel-io==0.5.9.1
 pyexcel-xls==0.5.8
 pyexcel-xlsx==0.5.6
-Pygments==2.2.0
+Pygments==2.7.4
 pyHook==1.5.1
 PyInstaller==3.3.1
 pylot==0.0.4
