@@ -126,7 +126,7 @@ post==1.0.1
 prompt-toolkit==1.0.15
 psutil==5.4.5
 public==1.0.1
-py==1.5.3
+py==1.10.0
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
 pycparser==2.18
