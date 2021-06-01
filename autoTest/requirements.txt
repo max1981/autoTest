@@ -198,7 +198,7 @@ twitter-oauth==0.2.0
 typing==3.6.4
 Unidecode==1.0.22
 update==0.4.4
-urllib3==1.22
+urllib3==1.26.5
 virtualenv==15.2.0
 virtualenv-clone==0.3.0
 virtualenvwrapper==4.8.2
