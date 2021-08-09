@@ -150,7 +150,7 @@ pytest==3.5.0
 python-dateutil==2.7.2
 python-slugify==1.2.5
 pytz==2018.4
-pywin32==216
+pywin32==301
 pywinpty==0.5.1
 pyyaml==3.12
 pyzmq==17.0.0
